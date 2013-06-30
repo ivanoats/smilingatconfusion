@@ -47,3 +47,9 @@ end
 group :test, :development do
   gem 'rspec-rails'
 end
+
+group :test do
+  gem 'capybara'
+  gem 'factory_girl'
+  gem 'email_spec'
+end
