@@ -11,6 +11,6 @@ feature 'Creating Tabs' do
     fill_in 'Body', with: "Somethin's happenin' don't speak too soon"
     click_button 'Create Tab'
 
-    expect(page).to have_content('Project has been created.')
+    expect(page).to have_content('Tab has been created.')
   end
 end
