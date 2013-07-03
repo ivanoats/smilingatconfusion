@@ -1,5 +1,6 @@
 class TabsController < ApplicationController
   def index
+    @tabs = Tab.all
   end
 
   def new
