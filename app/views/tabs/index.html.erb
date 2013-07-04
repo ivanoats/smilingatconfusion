@@ -1,7 +1,12 @@
 <ul>
 <% @tabs.each do |tab| %>
   <li><%= link_to tab.title, tab %>
-      <%= link_to("Edit", edit_tab_path(tab)) %></li>
+      <%= link_to("Edit", edit_tab_path(tab)) %>
+      <%= link_to "Delete", tab_path(tab),
+            method: :delete,
+            data: { confirm: "Are you sure you want to delete this tab?"
+                  } %>
+  </li>
 <% end %>
 </ul>
 <br>
