@@ -1,5 +1,8 @@
 <%= simple_form_for @tab do |f| %>
   <%= f.input :title %>
+  <%= f.association :artist %>
+  <%= f.association :album %>
+  <%= f.association :tuning %>
   <%= f.input :notes %>
   <%= f.input :body %>
   <%= f.button :submit %>

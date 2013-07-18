@@ -41,7 +41,7 @@ class TabsController < ApplicationController
   def destroy
     @tab.destroy
 
-    flash[:notice] = "Tab has been destroyed"
+    flash[:notice] = "Tab has been destroyed."
 
     redirect_to tabs_path
   end
@@ -49,7 +49,7 @@ class TabsController < ApplicationController
   private
 
     def tab_params
-      params.require(:tab).permit(:title, :notes, :body)
+      params.require(:tab).permit(:title, :artist, :album, :notes, :body)
     end
 
     def set_tab

@@ -2,6 +2,7 @@ Smilingatconfusion::Application.routes.draw do
   root to: "tabs#index"
 
   resources :tabs
+  resources :artists
   resources :tunings
   resources :albums
   resources :comments
