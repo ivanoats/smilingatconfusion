@@ -2,7 +2,7 @@
   <%= f.input :title %>
   <%= f.association :artist %>
   <%= f.association :album %>
-  <%= f.association :tuning %>
+  <%= f.association :tuning, label_method: :display %>
   <%= f.input :notes %>
   <%= f.input :body %>
   <%= f.button :submit %>

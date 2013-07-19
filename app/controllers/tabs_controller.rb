@@ -49,7 +49,7 @@ class TabsController < ApplicationController
   private
 
     def tab_params
-      params.require(:tab).permit(:title, :artist, :album, :notes, :body)
+      params.require(:tab).permit(:title, :artist_id, :album_id, :tuning_id, :notes, :body)
     end
 
     def set_tab
