@@ -1,0 +1,7 @@
+<div id="new_tuning_form_div">
+  <%= simple_form_for @tuning, id: :new_tuning, remote: true do |f| %>
+    <%= f.input :name, label: "New Tuning Name"%>
+    <%= f.input :notes, label: "Tuning Notes", hint: "eg. EADGBE" %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

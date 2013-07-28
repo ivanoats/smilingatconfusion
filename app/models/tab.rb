@@ -3,6 +3,6 @@ class Tab < ActiveRecord::Base
   belongs_to :artist
   belongs_to :tuning
   validates :title, presence: true, uniqueness: true
-  validates :body, presence: true
+  validates_presence_of :body, :title, :artist, :tuning
   #validates :artist, presence: true
 end

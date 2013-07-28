@@ -1,9 +1,10 @@
-<%= simple_form_for @tab do |f| %>
+<%= simple_form_for @tab, remote: true do |f| %>
   <%= f.input :title %>
-  <%= f.association :artist %>
+  <%= f.association :artist, include_blank: false %>
   <%= f.association :album %>
-  <%= f.association :tuning, label_method: :display %>
+  <%= f.association :tuning, label_method: :display, include_blank:false%>
+  <%= link_to "Add tuning", new_tuning_path, remote: true, id: :add_tuning_link%>
   <%= f.input :notes %>
-  <%= f.input :body %>
+  <%= f.input :body, input_html: { rows: '20'}%>
   <%= f.button :submit %>
 <% end %>

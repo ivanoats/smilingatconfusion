@@ -1,0 +1,5 @@
+$('#new_tuning').remove();
+$('#add_tuning_link').show();
+$('#tab_tuning_id').append('<option value="<%= @tuning.id %>"><%= @tuning.display %></option>')
+$('#tab_tuning_id').val('<%= @tuning.id %>')
+
