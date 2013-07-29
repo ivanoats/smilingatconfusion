@@ -1,1 +1,6 @@
 $('#add_tuning_link').hide().parent("form").after('<%= j render("form") %>')
+$('#add_tuning_link').click(
+  $('#new_tuning_form_div').show()
+    .css($('#tab_tuning_id').offset())
+)
+
