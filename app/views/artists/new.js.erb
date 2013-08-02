@@ -1,0 +1,5 @@
+$('#add_artist_link').hide().parent("form").after('<%= j render("form") %>')
+$('#add_artist_link').click(
+  $('#new_artist_form_div').show()
+    .css($('#tab_artist_id').offset())
+)

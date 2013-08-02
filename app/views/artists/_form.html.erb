@@ -1,4 +1,9 @@
-<%= simple_form_for @artist do |f| %>
-  <%= f.input :name %>
-  <%= f.button :submit %>
-<% end %>
+<div class="new_form_div" id="new_artist_form_div">
+  <%= link_to "#", class: 'close-div' do %>
+    <i class="icon-remove"></i>
+  <% end %>
+  <%= simple_form_for @artist, remote: true, id: :new_artist do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit %>
+  <% end %>
+</div>

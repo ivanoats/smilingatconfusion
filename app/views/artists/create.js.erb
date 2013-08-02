@@ -1,0 +1,4 @@
+$('#new_artist_form_div').remove();
+$('#add_artist_link').show();
+$('#tab_artist_id').append('<option value="<%= @artist.id %>"><%= @artist.name %></option>')
+$('#tab_artist_id').val('<%= @artist.id %>')

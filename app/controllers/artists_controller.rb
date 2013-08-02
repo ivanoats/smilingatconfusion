@@ -12,13 +12,20 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
-
-    if @artist.save
-      flash[:notice] = "Artist has been created."
-      redirect_to @artist
-    else
-      flash[:alert] = "Artist has not been created."
-      render action: "new"
+    respond_to do |format|
+      format.html do
+        if @artist.save
+          flash[:notice] = "Artist has been created."
+          redirect_to @artist
+        else
+          flash[:alert] = "Artist has not been created."
+          render action: "new"
+        end
+      end
+      format.js do
+        render text: @artist.errors.full_messages.join,
+          status: :unprocessable_entity unless @artist.save
+      end
     end
   end
 

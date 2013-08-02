@@ -1,6 +1,9 @@
-<div id="new_tuning_form_div">
+<div class="new_form_div" id="new_tuning_form_div">
+  <%= link_to "#", class: 'close-div' do %>
+    <i class="icon-remove"></i>
+  <% end %>
   <%= simple_form_for @tuning, id: :new_tuning, remote: true do |f| %>
-    <%= f.input :name, label: "New Tuning Name"%>
+    <%= f.input :name, label: "New Tuning Name", hint: "eg. Standard Tuning"%>
     <%= f.input :notes, label: "Tuning Notes", hint: "eg. EADGBE" %>
     <%= f.button :submit %>
   <% end %>
