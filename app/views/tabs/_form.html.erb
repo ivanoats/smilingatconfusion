@@ -1,15 +1,19 @@
 <%= simple_form_for @tab, remote: true do |f| %>
   <%= f.input :title %>
   <%= f.association :artist, include_blank: false %>
-    <%= link_to new_artist_path, remote: true, class: "btn btn-mini",id: :add_artist_link do%>
+  <%= link_to new_artist_path, remote: true, class: "btn",id: :add_artist_link do%>
     <i class="icon-plus"></i>
   <% end %>
+  <br />
+  <br />
   <%= f.association :album %>
   <%= f.association :tuning, label_method: :display, include_blank:false%>
-  <%= link_to new_tuning_path, remote: true, class: "btn btn-mini",id: :add_tuning_link do%>
+  <%= link_to new_tuning_path, remote: true, class: "btn",id: :add_tuning_link do%>
     <i class="icon-plus"></i>
   <% end %>
-  <%= f.input :notes %>
-  <%= f.input :body, input_html: { rows: '20'}%>
+  <br />
+  <br />
+  <%= f.input :notes, input_html: { class: 'wide_text_area' } %>
+  <%= f.input :body, input_html: { class: 'wide_text_area', rows: 50 } %>
   <%= f.button :submit %>
 <% end %>
