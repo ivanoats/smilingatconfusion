@@ -2,6 +2,9 @@ Smilingatconfusion::Application.routes.draw do
 
   root to: "tabs#index"
 
+  get "/signin", to: "sessions#new"
+  post "/signin", to: "sessions#create"
+
   resources :tabs
   resources :artists
   resources :tunings

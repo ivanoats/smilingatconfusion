@@ -1,0 +1,6 @@
+<h1>Sign In</h1>
+<%= simple_form_for :signin, method: "POST" do |f| %>
+  <%= f.input :name, label: :Username %>
+  <%= f.input :password %>
+  <%= f.button :submit, "Sign In" %>
+<% end %>
