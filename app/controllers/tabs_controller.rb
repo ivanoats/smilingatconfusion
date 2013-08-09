@@ -1,5 +1,5 @@
 class TabsController < ApplicationController
-
+  before_action :require_signin!, except: [:show, :index]
   before_action :set_tab, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -12,6 +12,7 @@ class TabsController < ApplicationController
 
   def create
     @tab = Tab.new(tab_params)
+    @tab.user = current_user
 
     if @tab.save
       flash[:notice] = "Tab has been created."
